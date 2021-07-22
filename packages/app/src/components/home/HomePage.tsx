@@ -15,14 +15,14 @@
  */
 
 import React from 'react';
-import { Content, Header, Lifecycle, Page } from '@backstage/core-components';
+import { Content, Header, Page } from '@backstage/core-components';
 import Grid from '@material-ui/core/Grid';
 import { RandomJokeHomePageComponent } from '@backstage/plugin-home';
 
 export const HomePage = () => {
   return (
     <Page themeId="home">
-      <Header title="Home" subtitle={<Lifecycle alpha />} />
+      <Header title="Home" />
       <Content>
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
