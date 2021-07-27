@@ -35,7 +35,6 @@ export const ComponentTabs = ({
   const handleChange = (_event: any, newValue: number) => {
     setValue(newValue);
   };
-  const Component = tabs.find((_t, idx) => idx === value)?.Component;
 
   return (
     <InfoCard title={title}>
@@ -44,7 +43,11 @@ export const ComponentTabs = ({
           <Tab key={t.label} label={t.label} />
         ))}
       </Tabs>
-      {Component && <Component />}
+      {tabs.map(({ Component }, idx) => (
+        <div {...(idx === value ? { style: { display: 'none' } } : {})}>
+          <Component />
+        </div>
+      ))}
     </InfoCard>
   );
 };
