@@ -28,9 +28,10 @@ export const homePlugin = createPlugin({
   },
 });
 
-export const HomeIndexPage = homePlugin.provide(
+export const HomepageCompositionRoot = homePlugin.provide(
   createRoutableExtension({
-    component: () => import('./components').then(m => m.HomeIndexPage),
+    component: () =>
+      import('./components').then(m => m.HomepageCompositionRoot),
     mountPoint: rootRouteRef,
   }),
 );

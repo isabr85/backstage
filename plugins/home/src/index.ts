@@ -16,7 +16,7 @@
 
 export {
   homePlugin,
-  HomeIndexPage,
+  HomepageCompositionRoot,
   RandomJokeHomePageComponent,
 } from './plugin';
 export { SettingsModal } from './components';

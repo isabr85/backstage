@@ -15,12 +15,12 @@
  */
 import React from 'react';
 import { createDevApp } from '@backstage/dev-utils';
-import { homePlugin, HomeIndexPage } from '../src/plugin';
+import { homePlugin, HomepageCompositionRoot } from '../src/plugin';
 
 createDevApp()
   .registerPlugin(homePlugin)
   .addPage({
-    element: <HomeIndexPage />,
+    element: <HomepageCompositionRoot />,
     title: 'Root Page',
     path: '/',
   })

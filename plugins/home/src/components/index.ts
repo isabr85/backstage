@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-export { HomeIndexPage } from './HomeIndexPage';
+export { HomepageCompositionRoot } from './HomepageCompositionRoot';
 export { SettingsModal } from './SettingsModal';

@@ -20,7 +20,7 @@ import {
   OAuthRequestDialog,
   SignInPage,
 } from '@backstage/core-components';
-import { HomeIndexPage } from '@backstage/plugin-home';
+import { HomepageCompositionRoot } from '@backstage/plugin-home';
 import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
 import {
   CatalogEntityPage,
@@ -101,7 +101,7 @@ const AppRouter = app.getRouter();
 
 const routes = (
   <FlatRoutes>
-    <Route path="/" element={<HomeIndexPage />}>
+    <Route path="/" element={<HomepageCompositionRoot />}>
       <HomePage />
     </Route>
     <Route path="/catalog" element={<CatalogIndexPage />} />
