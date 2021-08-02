@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-export { ComponentAccordion } from './ComponentAccordion';
-export { ComponentTabs, ComponentTab } from './ComponentTabs';
+export { ComponentTabs } from './ComponentTabs';
+export { ComponentTab } from './ComponentTab';
