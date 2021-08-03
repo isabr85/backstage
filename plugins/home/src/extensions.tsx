@@ -70,16 +70,18 @@ export function createCardExtension<T>({
 
     if (Renderer) {
       return (
-        <Renderer
-          title={overrideTitle || title}
-          {...{
-            Content,
-            ...(Actions ? { Actions } : {}),
-            ...(Settings ? { Settings } : {}),
-            ...(ContextProvider ? { ContextProvider } : {}),
-          }}
-          {...childProps}
-        />
+        <Suspense fallback={<Progress />}>
+          <Renderer
+            title={overrideTitle || title}
+            {...{
+              Content,
+              ...(Actions ? { Actions } : {}),
+              ...(Settings ? { Settings } : {}),
+              ...(ContextProvider ? { ContextProvider } : {}),
+              ...childProps,
+            }}
+          />
+        </Suspense>
       );
     }
 
