@@ -16,24 +16,24 @@
 
 import React from 'react';
 import {
+  FieldErrors,
+  FormProvider,
   SubmitHandler,
   UnpackNestedValue,
   useForm,
-  UseFormMethods,
-  UseFormOptions,
+  UseFormProps,
+  UseFormReturn,
 } from 'react-hook-form';
 
 type Props<TFieldValues extends Record<string, any>> = Pick<
-  UseFormOptions<TFieldValues>,
+  UseFormProps<TFieldValues>,
   'defaultValues'
 > & {
   onSubmit: SubmitHandler<TFieldValues>;
 
   render: (
-    props: Pick<
-      UseFormMethods<TFieldValues>,
-      'errors' | 'register' | 'control'
-    > & {
+    props: Pick<UseFormReturn<TFieldValues>, 'register' | 'setValue'> & {
+      errors: FieldErrors<TFieldValues>;
       values: UnpackNestedValue<TFieldValues>;
     },
   ) => React.ReactNode;
@@ -55,17 +55,20 @@ export const PreparePullRequestForm = <
   onSubmit,
   render,
 }: Props<TFieldValues>) => {
+  const methods = useForm<TFieldValues>({ mode: 'onTouched', defaultValues });
   const {
     handleSubmit,
     watch,
-    control,
     register,
     formState: { errors },
-  } = useForm<TFieldValues>({ mode: 'onTouched', defaultValues });
+    setValue,
+  } = methods;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {render({ values: watch(), errors, register, control })}
-    </form>
+    <FormProvider {...methods}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {render({ values: watch(), errors, register, setValue })}
+      </form>
+    </FormProvider>
   );
 };
