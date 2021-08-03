@@ -60,7 +60,7 @@ export const PreparePullRequestForm = <
     watch,
     control,
     register,
-    errors,
+    formState: { errors },
   } = useForm<TFieldValues>({ mode: 'onTouched', defaultValues });
 
   return (
