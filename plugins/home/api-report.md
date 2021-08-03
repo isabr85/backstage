@@ -10,10 +10,13 @@ import { LazyExoticComponent } from 'react';
 import { ReactNode } from 'react';
 import { RouteRef } from '@backstage/core-plugin-api';
 
-// Warning: (ae-missing-release-tag) "HomeIndexPage" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+// Warning: (ae-missing-release-tag) "HomepageCompositionRoot" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
 // @public (undocumented)
-export const HomeIndexPage: (props: { children?: ReactNode }) => JSX.Element;
+export const HomepageCompositionRoot: (props: {
+  title?: string | undefined;
+  children?: ReactNode;
+}) => JSX.Element;
 
 // Warning: (ae-missing-release-tag) "homePlugin" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
