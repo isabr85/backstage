@@ -45,10 +45,6 @@ import {
   ScaffolderPage,
   scaffolderPlugin,
   ScaffolderFieldExtensions,
-  RepoUrlPickerFieldExtension,
-  OwnerPickerFieldExtension,
-  EntityPickerFieldExtension,
-  EntityNamePickerFieldExtension,
 } from '@backstage/plugin-scaffolder';
 import { SearchPage } from '@backstage/plugin-search';
 import { TechRadarPage } from '@backstage/plugin-tech-radar';
@@ -119,10 +115,6 @@ const routes = (
     <Route path="/docs" element={<TechdocsPage />} />
     <Route path="/create" element={<ScaffolderPage />}>
       <ScaffolderFieldExtensions>
-        <EntityPickerFieldExtension />
-        <EntityNamePickerFieldExtension />
-        <RepoUrlPickerFieldExtension />
-        <OwnerPickerFieldExtension />
         <LowerCaseValuePickerFieldExtension />
       </ScaffolderFieldExtensions>
     </Route>
