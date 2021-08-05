@@ -20,3 +20,4 @@ export {
   RandomJokeHomePageComponent,
 } from './plugin';
 export { SettingsModal } from './components';
+export { createCardExtension } from './extensions';

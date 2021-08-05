@@ -6,9 +6,30 @@
 /// <reference types="react" />
 
 import { BackstagePlugin } from '@backstage/core-plugin-api';
+import { Extension } from '@backstage/core-plugin-api';
 import { LazyExoticComponent } from 'react';
+import { default as React_2 } from 'react';
 import { ReactNode } from 'react';
 import { RouteRef } from '@backstage/core-plugin-api';
+
+// Warning: (ae-forgotten-export) The symbol "ComponentRenderer" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "ComponentProps" needs to be exported by the entry point index.d.ts
+// Warning: (ae-missing-release-tag) "createCardExtension" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export function createCardExtension<T>({
+  title,
+  content,
+  actions,
+  contextProvider,
+  settings,
+}: {
+  title: string;
+  content: () => Promise<Component>;
+  actions?: () => Promise<Component>;
+  contextProvider?: () => Promise<Component>;
+  settings?: () => Promise<Component>;
+}): Extension<(props: ComponentRenderer & ComponentProps & T) => JSX.Element>;
 
 // Warning: (ae-missing-release-tag) "HomepageCompositionRoot" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
 //
@@ -72,6 +93,10 @@ export const SettingsModal: ({
   componentName: string;
   children: JSX.Element;
 }) => JSX.Element;
+
+// Warnings were encountered during analysis:
+//
+// src/extensions.d.ts:19:5 - (ae-forgotten-export) The symbol "Component" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 ```
