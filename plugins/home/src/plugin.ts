@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 import {
+  createComponentExtension,
   createPlugin,
   createRoutableExtension,
 } from '@backstage/core-plugin-api';
@@ -33,6 +34,29 @@ export const HomepageCompositionRoot = homePlugin.provide(
     component: () =>
       import('./components').then(m => m.HomepageCompositionRoot),
     mountPoint: rootRouteRef,
+  }),
+);
+
+export const ComponentAccordion = homePlugin.provide(
+  createComponentExtension({
+    component: {
+      lazy: () =>
+        import('./componentRenderers').then(m => m.ComponentAccordion),
+    },
+  }),
+);
+export const ComponentTabs = homePlugin.provide(
+  createComponentExtension({
+    component: {
+      lazy: () => import('./componentRenderers').then(m => m.ComponentTabs),
+    },
+  }),
+);
+export const ComponentTab = homePlugin.provide(
+  createComponentExtension({
+    component: {
+      lazy: () => import('./componentRenderers').then(m => m.ComponentTab),
+    },
   }),
 );
 

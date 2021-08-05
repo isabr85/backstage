@@ -12,6 +12,56 @@ import { default as React_2 } from 'react';
 import { ReactNode } from 'react';
 import { RouteRef } from '@backstage/core-plugin-api';
 
+// Warning: (ae-missing-release-tag) "ComponentAccordion" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const ComponentAccordion: ({
+  title,
+  Content,
+  Actions,
+  Settings,
+  ContextProvider,
+  ...childProps
+}: {
+  title: string;
+  Content: LazyExoticComponent<(props: any) => JSX.Element>;
+  Actions?: LazyExoticComponent<(props: any) => JSX.Element> | undefined;
+  Settings?: LazyExoticComponent<(props: any) => JSX.Element> | undefined;
+  ContextProvider?:
+    | LazyExoticComponent<(props: any) => JSX.Element>
+    | undefined;
+}) => JSX.Element;
+
+// Warning: (ae-missing-release-tag) "ComponentTab" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const ComponentTab: ({
+  title,
+  Content,
+  ContextProvider,
+  ...childProps
+}: {
+  title: string;
+  Content: LazyExoticComponent<(props: any) => JSX.Element>;
+  ContextProvider?:
+    | LazyExoticComponent<(props: any) => JSX.Element>
+    | undefined;
+}) => JSX.Element;
+
+// Warning: (ae-missing-release-tag) "ComponentTabs" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)
+//
+// @public (undocumented)
+export const ComponentTabs: ({
+  title,
+  tabs,
+}: {
+  title: string;
+  tabs: {
+    label: string;
+    Component: (props: any) => JSX.Element;
+  }[];
+}) => JSX.Element;
+
 // Warning: (ae-forgotten-export) The symbol "ComponentRenderer" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "ComponentProps" needs to be exported by the entry point index.d.ts
 // Warning: (ae-missing-release-tag) "createCardExtension" is exported by the package, but it is missing a release tag (@alpha, @beta, @public, or @internal)

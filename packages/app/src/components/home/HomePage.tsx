@@ -16,12 +16,12 @@
 
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { RandomJokeHomePageComponent } from '@backstage/plugin-home';
 import {
+  RandomJokeHomePageComponent,
   ComponentAccordion,
   ComponentTabs,
   ComponentTab,
-} from './componentRenderers';
+} from '@backstage/plugin-home';
 
 export const HomePage = () => (
   <Grid container spacing={3}>

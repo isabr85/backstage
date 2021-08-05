@@ -18,6 +18,9 @@ export {
   homePlugin,
   HomepageCompositionRoot,
   RandomJokeHomePageComponent,
+  ComponentAccordion,
+  ComponentTabs,
+  ComponentTab,
 } from './plugin';
 export { SettingsModal } from './components';
 export { createCardExtension } from './extensions';
