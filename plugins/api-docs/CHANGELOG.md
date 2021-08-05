@@ -1,5 +1,11 @@
 # @backstage/plugin-api-docs
 
+## 0.6.6
+
+### Patch Changes
+
+- 0383314c9: Support deep linking in OpenAPI definitions.
+
 ## 0.6.5
 
 ### Patch Changes
