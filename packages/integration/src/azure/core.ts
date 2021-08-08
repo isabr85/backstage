@@ -105,7 +105,12 @@ export function getAzureDownloadUrl(url: string): string {
     ? `&scopePath=${encodeURIComponent(filepath)}`
     : '';
 
-  return `${protocol}://${resource}/${organization}/${project}/_apis/git/repositories/${repoName}/items?recursionLevel=full&download=true&api-version=6.0${scopePath}`;
+  if (url.includes('dev.azure.com'))
+  {
+     return `${protocol}://${resource}/${organization}/${project}/_apis/git/repositories/${repoName}/items?recursionLevel=full&download=true&api-version=6.0${scopePath}`;
+  }
+  
+  return `${protocol}://${resource}/${organization.replace('/_git','')}/_apis/git/repositories/${repoName}/items?recursionLevel=full&download=true&api-version=6.0${scopePath}`;
 }
 
 /**
